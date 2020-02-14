@@ -14,25 +14,24 @@ export class Headline extends React.Component<any, any> {
         super(props);
 
         this.state = {
-            modalIsOpen: false
+            isAboutOpen: false
         };
 
+        Modal.setAppElement('#root');
         this.openAbout = this.openAbout.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
 
     private openAbout(): void {
-        this.setState({modalIsOpen: true});
+        this.setState({isAboutOpen: true});
     }
 
     private afterOpenModal(): void {
-        // references are now sync'd and can be accessed.
-        // this.subtitle.style.color = '#f00';
     }
 
     private closeModal(): void {
-        this.setState({modalIsOpen: false});
+        this.setState({isAboutOpen: false});
     }
 
     render() {
@@ -43,46 +42,45 @@ export class Headline extends React.Component<any, any> {
                 <div className={"location"}></div>
 
                 <Modal
-                    isOpen={this.state.modalIsOpen}
+                    data={{id: "aboutPopup"}}
+                    isOpen={this.state.isAboutOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
-                    className={styles.about}
-                    contentLabel={"Example Modal"}
+                    className={styles.aboutPopup}
+                    closeTimeoutMS={400}
                 >
-                    <div id={"aboutPopup"} className={"aboutPopup"}>
-                        <img alt={"exitIcon"} id={"aboutExitLogo"} className={"aboutExitLogo"} src={exitIcon}/>
-                        <div id={"aboutHeaderSpacing"} className={"aboutHeaderSpacing"}></div>
-                        <div id={"aboutLogoDiv"}>
-                            <div id={"aboutHeader"} className={"aboutHeader"}></div>
-                            <img alt={"bigLogo"} id={"aboutLogo"} className={"{aboutLogo"} src={bigLogo}/>
-                        </div>
-                        <div className={"aboutSpacing"}></div>
-                        <div id={"aboutTitle"} className={"aboutTitle"}>
-                            חג עצמאות שמח!
-                        </div>
-                        <div className={"aboutSpacing"}></div>
-                        <div id={"aboutBody"} className={"aboutBody"}>
-                            האפליקציה פותחה ע"י <span style={{fontWeight: 600}}>יחידת אופק 324</span>, היחידה
-                            הטכנולוגית המבצעית של חיל האוויר, לטובת הצגת מיקום כלי הטיס בזמן אמת במהלך המטס החגיגי
-                            של יום העצמאות לכבוד חגיגות 71 שנה למדינת ישראל
-                        </div>
-                        <div className={"aboutSpacing"}></div>
-                        <img alt={"iafLogo"} id={"iafLogo"} src={iafLogo} className={"iafLogo"}/>
-                        <div className={"aboutSpacing"}></div>
-                        <div className={"bottomText"}>
-                            לידיעתכם, ייתכנו שינוים בלוחות הזמנים
-                        </div>
-                        <div id={"aboutBottomLink"} className={"aboutBottomLink"}>
-                            <a id={"facebookLink"} href={"https://www.facebook.com/IsraeliAirForce.HE/"}>
-                            </a>
-                            <img alt={"facebookIcon"} src={facebookIcon} className={"aboutBottomImg"}/>
-                            <a id={"instagramLink"} href={"https://www.instagram.com/israeliairforcea/"}>
-                            </a>
-                            <img alt={"instagramIcon"} src={instagramIcon} className={"aboutBottomImg"}/>
-                            <a id={"twitterLink"} href={"https://twitter.com/iafsite"}>
-                            </a>
-                            <img alt={"twitterIcon"} src={twitterIcon} className={"aboutBottomImg"}/>
-                        </div>
+                    <img alt={"exitIcon"} className={styles.aboutExitLogo} src={exitIcon} onClick={this.closeModal}/>
+                    <div id={"aboutHeaderSpacing"} className={styles.aboutHeaderSpacing}></div>
+                    <div id={"aboutLogoDiv"} className={styles.aboutLogoContainer}>
+                        <div id={"aboutHeader"} className={styles.aboutHeader}></div>
+                        <img alt={"bigLogo"} className={styles.aboutLogo} src={bigLogo}/>
+                    </div>
+                    <div className={styles.aboutSpacing}></div>
+                    <div id={"aboutTitle"} className={styles.aboutTitle}>
+                        חג עצמאות שמח!
+                    </div>
+                    <div className={styles.aboutSpacing}></div>
+                    <div id={"aboutBody"} className={styles.aboutBody}>
+                        האפליקציה פותחה ע"י <span style={{fontWeight: 600}}>יחידת אופק 324</span>, היחידה
+                        הטכנולוגית המבצעית של חיל האוויר, לטובת הצגת מיקום כלי הטיס בזמן אמת במהלך המטס החגיגי
+                        של יום העצמאות לכבוד חגיגות 71 שנה למדינת ישראל
+                    </div>
+                    <div className={styles.aboutSpacing}></div>
+                    <img alt={"iafLogo"} id={"iafLogo"} src={iafLogo} className={styles.iafLogo}/>
+                    <div className={styles.aboutSpacing}></div>
+                    <div className={styles.bottomText}>
+                        לידיעתכם, ייתכנו שינוים בלוחות הזמנים
+                    </div>
+                    <div id={"aboutBottomLink"} className={styles.aboutBottomLink}>
+                        <a id={"facebookLink"} href={"https://www.facebook.com/IsraeliAirForce.HE/"}>
+                        </a>
+                        <img alt={"facebookIcon"} src={facebookIcon} className={styles.aboutBottomImg}/>
+                        <a id={"instagramLink"} href={"https://www.instagram.com/israeliairforcea/"}>
+                        </a>
+                        <img alt={"instagramIcon"} src={instagramIcon} className={styles.aboutBottomImg}/>
+                        <a id={"twitterLink"} href={"https://twitter.com/iafsite"}>
+                        </a>
+                        <img alt={"twitterIcon"} src={twitterIcon} className={styles.aboutBottomImg}/>
                     </div>
                 </Modal>
             </div>
