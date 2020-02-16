@@ -1,0 +1,12 @@
+.ReactModal__Content {
+    transition: all 400ms ease-in-out;
+}
+
+/** TODO: change to #aboutPopup after my pr is approved **/
+.ReactModal__Overlay--after-open [data-id=aboutPopup] {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close [data-id=aboutPopup] {
+    opacity: 0;
+}

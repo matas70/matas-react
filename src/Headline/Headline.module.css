@@ -12,10 +12,6 @@
     width: 90px;
 }
 
-.about {
-
-}
-
 .aboutPopup {
     opacity: 0;
     display: flex;
@@ -33,81 +29,5 @@
 }
 
 .aboutPopupOverlay {
-    opacity: 0;
-    transition: opacity 400ms ease-in-out;
-}
 
-.aboutExitLogo {
-    z-index: 10003;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-}
-
-.aboutHeaderSpacing {
-    background: #7bd1fc;
-    width: 100%;
-    flex: 1;
-    margin-bottom: -1px;
-}
-
-
-.aboutHeader {
-    align-items: center;
-    background: #7bd1fc;
-    width: 100%;
-    height: 152px;
-}
-
-.aboutLogo {
-    position: relative;
-    top: -134px;
-}
-
-.aboutSpacing {
-    flex: 1;
-}
-
-
-.aboutTitle {
-    font-family: "Heebo-Bold", sans-serif;
-    font-size: 22px;
-    margin-bottom: 13px;
-    margin-top: 13px;
-}
-
-
-.aboutBody {
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-.iafLogo{
-    width: 69px;
-    height: 68px;
-    padding-bottom: 7px;
-    padding-top: 7px;
-}
-
-.bottomText {
-    font-size: 10pt;
-    align-self: center;
-    padding-bottom: 7px;
-}
-
-.aboutBottomLink {
-    height: 50px;
-    width: 100%;
-    background: #f7f5f5;
-}
-
-.aboutBottomImg{
-    padding:9px
-}
-
-.aboutLogoContainer {
-    width: 100%;
-    height: 198px;
 }

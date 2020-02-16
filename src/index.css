@@ -60,16 +60,3 @@ code {
 * {
   box-sizing: border-box;
 }
-
-.ReactModal__Content {
-  transition: all 400ms ease-in-out;
-}
-
-/** TODO: change to #aboutPopup after my pr is approved **/
-[data-id=aboutPopup].ReactModal__Content--after-open {
-  opacity: 1;
-}
-
-[data-id=aboutPopup].ReactModal__Content--before-close {
-  opacity: 0;
-}
