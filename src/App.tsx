@@ -3,10 +3,10 @@ import './App.css';
 import {Headline} from "./headline/Headline";
 
 const App = () => {
-  
-  return (
-    <Headline></Headline>
-  );
-}
+
+    return (
+        <Headline></Headline>
+    );
+};
 
 export default App;
