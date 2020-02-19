@@ -1,12 +1,20 @@
 import React from 'react';
 import './App.css';
-import {Headline} from "./headline/Headline";
+import Matas from "./Matas/Matas";
+import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: "'Heebo-Regular', sans-serif"
+    }
+});
 
 const App = () => {
-  
-  return (
-    <Headline></Headline>
-  );
+    return (
+        <MuiThemeProvider theme={theme}>
+            <Matas></Matas>
+        </MuiThemeProvider>
+    );
 }
 
 export default App;
