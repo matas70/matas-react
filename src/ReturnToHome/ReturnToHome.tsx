@@ -1,18 +1,17 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import styles from "./ReturnToHome.module.css";
 import ReturnToHome from "../icons/returnToHome.svg";
 
-class ReturnToHomeButton extends React.Component {
-    handleGoHome() {
-        console.log("bla");
-    }
-
-    render() {
-        return (<button className={styles.returnToHomeButton} onClick={this.handleGoHome}>
-                <img alt={"returnToHome"} src={ReturnToHome} className={styles.returnToHome}/>
-            </button>
-        )
-    }
+interface handleGoHome {
+    onClick: () => void;
 }
 
-export default ReturnToHomeButton;
+export const ReturnToHomeButton: FunctionComponent<handleGoHome> = (props) => {
+
+    return (
+        <button className={styles.returnToHomeButton} onClick={props.onClick}>
+            <img alt={"returnToHome"} src={ReturnToHome} className={styles.returnToHome}/>
+        </button>
+    );
+};
+
