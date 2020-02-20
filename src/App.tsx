@@ -15,6 +15,6 @@ const App = () => {
             <Matas></Matas>
         </MuiThemeProvider>
     );
-}
+};
 
 export default App;

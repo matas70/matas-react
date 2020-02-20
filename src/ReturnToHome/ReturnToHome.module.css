@@ -1,0 +1,11 @@
+.returnToHome {
+    background: transparent;
+}
+
+.returnToHomeButton {
+    border: none;
+    width: 25px;
+    margin-left: 20px;
+    background: transparent;
+    outline: none;
+}
