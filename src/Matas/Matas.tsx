@@ -1,7 +1,7 @@
-import {Headline} from "../headline/Headline";
 import React from "react";
 import {Drawer, withStyles} from "@material-ui/core";
 import Menu, {TabContent} from "../Menu/Menu";
+import {Headline} from "../Headline/Headline";
 
 const styles = {
     paper: {

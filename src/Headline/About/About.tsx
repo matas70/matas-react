@@ -25,10 +25,6 @@ export function About(props: { onExit: () => void }) {
 
                         <img alt="bigLogo" className={styles.aboutLogo} src={bigLogo}/>
                     </div>
-                    {/*<div id="aboutLogoDiv" className={styles.aboutLogoContainer}>*/}
-                    {/*</div>*/}
-                    {/*<div className={styles.aboutSpacing}></div>*/}
-                    {/*<div className={styles.aboutSpacing}></div>*/}
                     <div id="aboutBody" className={styles.aboutBody}>
                         <div id="aboutTitle" className={styles.aboutTitle}>
                             חג עצמאות שמח!
