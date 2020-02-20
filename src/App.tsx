@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Matas from "./Matas/Matas";
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
-import {Headline} from "./headline/Headline";
 
 const theme = createMuiTheme({
     typography: {
@@ -13,11 +12,9 @@ const theme = createMuiTheme({
 const App = () => {
     return (
         <MuiThemeProvider theme={theme}>
-            <Matas>
-                <Headline></Headline>
-            </Matas>
+            <Matas></Matas>
         </MuiThemeProvider>
     );
-}
+};
 
 export default App;

@@ -42,11 +42,16 @@ class Matas extends React.Component<any, MatasState> {
         this.setState({isSidebarOpen: !this.state.isSidebarOpen});
     }
 
+    goHome() {
+        console.log("TODO")
+    }
+
     render(): React.ReactNode {
         let drawerClass: any = this.props.classes.paper;
         return (
             <div>
-                <Headline isMenuActive={this.state.isSidebarOpen} menuButtonAction={this.handleSidebarOpen}></Headline>
+                <Headline isMenuActive={this.state.isSidebarOpen} menuButtonAction={this.handleSidebarOpen}
+                          goHome={this.goHome}></Headline>
                 <Drawer anchor={"right"} open={this.state.isSidebarOpen} classes={{paper: drawerClass}}>
                     <Menu tabs={tabContents}></Menu>
                 </Drawer>
