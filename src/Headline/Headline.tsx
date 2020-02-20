@@ -38,7 +38,7 @@ export class Headline extends React.Component<any, any> {
                 <div className={"location"}></div>
 
                 <Modal
-                    data={{id: "aboutPopup"}}
+                    id="aboutPopup"
                     isOpen={this.state.isAboutOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}

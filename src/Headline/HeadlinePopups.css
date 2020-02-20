@@ -3,10 +3,10 @@
 }
 
 /** TODO: change to #aboutPopup after my pr is approved **/
-.ReactModal__Overlay--after-open [data-id=aboutPopup] {
+.ReactModal__Overlay--after-open #aboutPopup {
     opacity: 1;
 }
 
-.ReactModal__Overlay--before-close [data-id=aboutPopup] {
+.ReactModal__Overlay--before-close #aboutPopup {
     opacity: 0;
 }

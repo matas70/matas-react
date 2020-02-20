@@ -10,37 +10,45 @@ import {Link} from "../../Link/Link";
 
 export function About(props: { onExit: () => void }) {
     let links = [
-        <Link href={"https://www.facebook.com/IsraeliAirForce.HE/"} src={facebookIcon} />,
-        <Link href={"https://www.instagram.com/israeliairforcea/"} src={instagramIcon} />,
-        <Link href={"https://twitter.com/iafsite"} src={twitterIcon} />
+        <Link key="facebookLink" href={"https://www.facebook.com/IsraeliAirForce.HE/"} src={facebookIcon}/>,
+        <Link key="instagramLink" href={"https://www.instagram.com/israeliairforcea/"} src={instagramIcon}/>,
+        <Link key="twitterLink" href={"https://twitter.com/iafsite"} src={twitterIcon}/>
     ];
 
     return (
-        <div className={styles.aboutContainer}>
+        <div className={styles.container}>
             <img alt="exitIcon" className={styles.aboutExitLogo} src={exitIcon} onClick={props.onExit}/>
-            <div id="aboutHeaderSpacing" className={styles.aboutHeaderSpacing}></div>
-            <div id="aboutLogoDiv" className={styles.aboutLogoContainer}>
-                <div id="aboutHeader" className={styles.aboutHeader}></div>
-                <img alt="bigLogo" className={styles.aboutLogo} src={bigLogo}/>
-            </div>
-            <div className={styles.aboutSpacing}></div>
-            <div id="aboutTitle" className={styles.aboutTitle}>
-                חג עצמאות שמח!
-            </div>
-            <div className={styles.aboutSpacing}></div>
-            <div id="aboutBody" className={styles.aboutBody}>
-                האפליקציה פותחה ע"י <span style={{fontWeight: 600}}>יחידת אופק 324</span>, היחידה
-                הטכנולוגית המבצעית של חיל האוויר, לטובת הצגת מיקום כלי הטיס בזמן אמת במהלך המטס החגיגי
-                של יום העצמאות לכבוד חגיגות 71 שנה למדינת ישראל
-            </div>
-            <div className={styles.aboutSpacing}></div>
-            <img alt="iafLogo" id="iafLogo" src={iafLogo} className={styles.iafLogo}/>
-            <div className={styles.aboutSpacing}></div>
-            <div className={styles.bottomText}>
-                לידיעתכם, ייתכנו שינוים בלוחות הזמנים
-            </div>
-            <div id="aboutBottomLink" className={styles.linksContainer}>
-                {links}
+
+            <div className={styles.aboutContainer}>
+                <div className={styles.headerContainer}>
+                    <div id="aboutHeader" className={styles.aboutHeader}>
+
+                        <img alt="bigLogo" className={styles.aboutLogo} src={bigLogo}/>
+                    </div>
+                    {/*<div id="aboutLogoDiv" className={styles.aboutLogoContainer}>*/}
+                    {/*</div>*/}
+                    {/*<div className={styles.aboutSpacing}></div>*/}
+                    {/*<div className={styles.aboutSpacing}></div>*/}
+                    <div id="aboutBody" className={styles.aboutBody}>
+                        <div id="aboutTitle" className={styles.aboutTitle}>
+                            חג עצמאות שמח!
+                        </div>
+                        <div className={styles.content}>
+                            האפליקציה פותחה ע"י <span style={{fontWeight: 600}}>יחידת אופק 324</span>, היחידה
+                            הטכנולוגית המבצעית של חיל האוויר, לטובת הצגת מיקום כלי הטיס בזמן אמת במהלך המטס החגיגי
+                            של יום העצמאות לכבוד חגיגות 71 שנה למדינת ישראל
+                        </div>
+                        <img alt="iafLogo" id="iafLogo" src={iafLogo} className={styles.iafLogo}/>
+                    </div>
+                    <div id="aboutBottomLink" className={styles.footer}>
+                        <div className={styles.bottomText}>
+                            לידיעתכם, ייתכנו שינוים בלוחות הזמנים
+                        </div>
+                        <div className={styles.linksContainer}>
+                            {links}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

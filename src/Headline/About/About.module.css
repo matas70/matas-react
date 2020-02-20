@@ -8,47 +8,44 @@
     top: 10px;
 }
 
-.aboutHeaderSpacing {
-    background: #7bd1fc;
-    width: 100%;
-    flex: 1;
-    margin-bottom: -1px;
-}
-
-
 .aboutHeader {
     align-items: center;
     background: #7bd1fc;
     width: 100%;
-    height: 152px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 0.5;
+    margin-bottom: 42px;
 }
 
 .aboutLogo {
     position: relative;
-    top: -134px;
+    bottom: -42px;
 }
 
 .aboutSpacing {
-    flex: 1;
+    flex-basis: 10%;
 }
-
 
 .aboutTitle {
     font-family: "Heebo-Bold", sans-serif;
     font-size: 22px;
-    margin-bottom: 13px;
-    margin-top: 13px;
 }
 
 
 .aboutBody {
-    margin-left: 8px;
-    margin-right: 8px;
+    width: 75%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
 }
 
 .iafLogo{
-    width: 69px;
-    height: 68px;
+    width: 90px;
+    height: 90px;
     padding-bottom: 7px;
     padding-top: 7px;
 }
@@ -60,20 +57,30 @@
 }
 
 .linksContainer {
-    height: 50px;
     width: 100%;
     background: #f7f5f5;
 }
 
 .aboutBottomImg{
-    padding:9px
+    padding: 9px;
 }
 
-.aboutLogoContainer {
-    width: 100%;
-    height: 198px;
+.container {
+    display: contents;
+}
+
+.headerContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .aboutContainer {
-    display: contents;
+    height: 100%;
+}
+
+.footer {
+    width: 100%;
 }
