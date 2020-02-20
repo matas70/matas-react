@@ -1,0 +1,13 @@
+.mainContainer {
+    display: flex;
+}
+
+.drawer {
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+    flex: 1;
+    background-color: blue;
+}

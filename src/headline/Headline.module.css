@@ -1,0 +1,33 @@
+.headline {
+    height: 64px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logo {
+    width: 90px;
+}
+
+.aboutPopup {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    text-align: center;
+    position: absolute;
+    z-index: 10002;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    justify-content: space-between;
+    direction: rtl;
+}
+
+.aboutPopupOverlay {
+
+}
