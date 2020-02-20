@@ -1,21 +1,22 @@
 import React from "react";
 import styles from "./Headline.module.css";
 import logo from '../icons/headerLogo.svg';
+import {MenuButton} from "../Menu/MenuButton";
 import {ReturnToHomeButton} from "../ReturnToHome/ReturnToHome";
 
-export class Headline extends React.Component {
-    render() {
-        return (
-            <div className={styles.headline}>
-                <ReturnToHomeButton onClick={this.goHome}/>
-                <div className={"hamburger"}></div>
-                <img alt="logo" src={logo} className={styles.logo}/>
-                <div className={"location"}></div>
-            </div>
-        )
-    }
-
-    goHome() {
-        console.log("TODO")
-    }
+export interface HeadlineProps {
+    menuButtonAction: () => void;
+    isMenuActive: boolean;
 }
+
+export const Headline: FunctionComponent<HeadlineProps> = (props) => {
+    return (
+        <div className={styles.headline}>
+            <ReturnToHomeButton onClick={this.goHome}/>
+            <MenuButton onClick={props.menuButtonAction} isOpen={props.isMenuActive}></MenuButton>
+            <img alt="logo" src={logo} className={styles.logo}/>
+            <div className={"location"}></div>
+        </div>
+    );
+
+};
