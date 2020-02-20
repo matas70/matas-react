@@ -1,0 +1,37 @@
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: white;
+}
+
+.hamburger-box {
+    width: 22px;
+    height: 8px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 22px;
+    height: 2px;
+}
+
+.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    bottom: -8px;
+}
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+    background-color: white;
+}
+
+.hamburger:hover {
+    opacity: 1;
+}
+
+.hamburger.is-active:hover {
+    opacity: 1;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
