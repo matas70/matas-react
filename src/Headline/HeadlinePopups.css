@@ -1,0 +1,11 @@
+.ReactModal__Content {
+    transition: all 400ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open #aboutPopup {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close #aboutPopup {
+    opacity: 0;
+}

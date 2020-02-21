@@ -6,7 +6,7 @@ import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
 const theme = createMuiTheme({
     typography: {
         fontFamily: "'Heebo-Regular', sans-serif"
-    }
+    },
 });
 
 const App = () => {
@@ -15,6 +15,6 @@ const App = () => {
             <Matas></Matas>
         </MuiThemeProvider>
     );
-}
+};
 
 export default App;
