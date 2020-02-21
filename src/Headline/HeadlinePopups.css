@@ -2,7 +2,6 @@
     transition: all 400ms ease-in-out;
 }
 
-/** TODO: change to #aboutPopup after my pr is approved **/
 .ReactModal__Overlay--after-open #aboutPopup {
     opacity: 1;
 }
