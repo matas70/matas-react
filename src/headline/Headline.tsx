@@ -40,7 +40,9 @@ export class Headline extends React.Component<HeadlineProps, HeadlineState> {
             <div className={styles.headline}>
                 {this.props.menuButton}
                 <img alt={"logo"} src={logo} className={styles.logo} onClick={this.openAbout}/>
-                <div className={"location"}></div>
+                <div className={"location"}>
+
+                </div>
                 <Modal
                     id="aboutPopup"
                     isOpen={this.state.isAboutOpen}
