@@ -1,12 +1,21 @@
 import "./HeadlinePopups.css";
-import React from "react";
 import Modal from "react-modal";
 import styles from "./Headline.module.css";
 import logo from "../icons/HeaderLogo.svg";
 import {About} from "./About/About";
+import {MenuButtonProps} from "../Menu/MenuButton";
+import React from "react";
 
-export class Headline extends React.Component<any, any> {
-    constructor(props: any) {
+export interface HeadlineProps {
+    menuButton: React.FunctionComponentElement<MenuButtonProps>
+}
+
+export interface HeadlineState {
+    isAboutOpen: boolean
+}
+
+export class Headline extends React.Component<HeadlineProps, HeadlineState> {
+    constructor(props: HeadlineProps) {
         super(props);
 
         this.state = {
@@ -15,15 +24,11 @@ export class Headline extends React.Component<any, any> {
 
         Modal.setAppElement('#root');
         this.openAbout = this.openAbout.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
 
     private openAbout(): void {
         this.setState({isAboutOpen: true});
-    }
-
-    private afterOpenModal(): void {
     }
 
     private closeModal(): void {
@@ -33,20 +38,18 @@ export class Headline extends React.Component<any, any> {
     render() {
         return (
             <div className={styles.headline}>
-                <div className={"hamburger"}></div>
+                {this.props.menuButton}
                 <img alt={"logo"} src={logo} className={styles.logo} onClick={this.openAbout}/>
                 <div className={"location"}></div>
-
                 <Modal
                     id="aboutPopup"
                     isOpen={this.state.isAboutOpen}
-                    onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     className={styles.aboutPopup}
                     overlayClassName={styles.aboutPopupOverlay}
                     closeTimeoutMS={400}
                 >
-                    <About onExit={this.closeModal} />
+                    <About onExit={this.closeModal}/>
                 </Modal>
             </div>
         )

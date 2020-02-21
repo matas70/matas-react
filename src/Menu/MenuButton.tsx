@@ -16,4 +16,4 @@ export const MenuButton: FunctionComponent<MenuButtonProps> = (props) => {
                 </span>
         </button>
     );
-}
+};

@@ -1,13 +1,17 @@
 import React from "react";
-import {Drawer, withStyles} from "@material-ui/core";
+import {SwipeableDrawer, withStyles} from "@material-ui/core";
 import Menu, {TabContent} from "../Menu/Menu";
 import {Headline} from "../Headline/Headline";
+import {MenuButton} from "../Menu/MenuButton";
 
 const styles = {
     paper: {
         height: "calc(100% - 64px)",
         top: 64,
         width: "100%"
+    },
+    root: {
+        background: "transparent"
     }
 };
 
@@ -24,10 +28,9 @@ export const tabContents: TabContent[] = [
 
 export interface MatasState {
     isSidebarOpen: boolean;
-};
+}
 
 class Matas extends React.Component<any, MatasState> {
-
     constructor(props: any) {
         super(props);
 
@@ -42,15 +45,43 @@ class Matas extends React.Component<any, MatasState> {
         this.setState({isSidebarOpen: !this.state.isSidebarOpen});
     }
 
+    public toggleSidebar(isOpen: boolean) {
+        this.setState({isSidebarOpen: isOpen});
+    }
+
     render(): React.ReactNode {
-        let drawerClass: any = this.props.classes.paper;
         return (
             <div>
-                <Headline isMenuActive={this.state.isSidebarOpen} menuButtonAction={this.handleSidebarOpen}></Headline>
-                <Drawer anchor={"right"} open={this.state.isSidebarOpen} classes={{paper: drawerClass}}>
-                    <Menu tabs={tabContents}></Menu>
-                </Drawer>
-                <span>{"ניר הגבר רצח"}</span>
+                <Headline menuButton={
+                    <MenuButton onClick={this.handleSidebarOpen} isOpen={this.state.isSidebarOpen}>
+
+                    </MenuButton>}>
+                </Headline>
+                {/*Tested on my phone */}
+                <SwipeableDrawer
+                    onClose={() => this.toggleSidebar(false)}
+                    onOpen={() => this.toggleSidebar(true)}
+                    anchor={"right"}
+                    open={this.state.isSidebarOpen}
+                    classes={{paper: this.props.classes.paper}}
+                    hideBackdrop={true}
+                    ModalProps={
+                        {
+                            BackdropProps: {
+                                classes: {
+                                    root: this.props.classes.root,
+                                }
+                            }
+                        }
+                    }
+
+                    disableBackdropTransition={true}
+                >
+                    <Menu tabs={tabContents}>
+
+                    </Menu>
+                </SwipeableDrawer>
+                <span>{"ניצן הגבר רצח"}</span>
             </div>
         );
     }
